@@ -5,8 +5,9 @@ nishant
 Tracking Number: {{ fulfillment.tracking_number }}
 {% for link in linklists.main-menu.links -%}
   <li>{{ link.title | link_to: link.url }}</li>
+{%- endfor %}
 spacific colection category
+
 {% for product in collections['sport-watches'].products %}
   {{- product.title | link_to: product.url }}
 {% endfor %}
-{%- endfor %}
