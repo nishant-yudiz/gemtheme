@@ -22,6 +22,6 @@ spacific collection category
   <p><img src="{{ product.featured_image |  image_url }}"></p>
     <p><img src="{{ product.featured_media |  image_url }}"></p>
   <p>{{ product.gift_card? }}</p>
-
+<p>{{ product.handle }}</p>
   {{- product.title | link_to: product.url }}
 {% endfor %}
