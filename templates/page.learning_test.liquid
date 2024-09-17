@@ -85,6 +85,17 @@ spacific collection category
 {% else %}
   <p>This product is available for one-time purchase only.</p>
 {% endif %}
-
+{% if product.tags.size > 0 %}
+  <div class="product-tags">
+    <h3>Tags:</h3>
+    <ul>
+      {% for tag in product.tags %}
+        <li>{{ tag }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% else %}
+  <p>No tags available for this product.</p>
+{% endif %}
   {{- product.title | link_to: product.url }}
 {% endfor %}
