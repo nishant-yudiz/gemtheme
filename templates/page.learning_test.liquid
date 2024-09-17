@@ -28,7 +28,7 @@ spacific collection category
    <p>image:- {{ product.images }}</p>
 <p><img src="{{ product.images[0] | image_url }}"></p>
 <p><img src="{{ product.media[0] | image_url }}"></p>
-{%- for field in product.metafields.instructions -%}
+{%- for field in product.metafields -%}
       <li>{{ field | first }}: {{ field | last }}</li>
     {%- endfor -%}
   {{- product.title | link_to: product.url }}
