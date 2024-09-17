@@ -45,5 +45,21 @@ spacific collection category
  <p>published_at:- {{ product.published_at }}</p>
  <p>quantity_price_breaks_configured:- {{ product.quantity_price_breaks_configured }}</p>
  <p>requires_selling_plan:- {{ product.requires_selling_plan }}</p>
+{% if product.has_subscription_selling_plan %}
+  <div>
+    {% assign allocation = product.selected_or_first_available_selling_plan_allocation %}
+    
+    {% if allocation %}
+      <p>Purchase option: {{ allocation.selling_plan.name }}</p>
+      <p>Price: {{ allocation.price | money }}</p>
+      <p>Delivery interval: {{ allocation.selling_plan.delivery_policy.interval }}</p>
+    {% else %}
+      <p>No selling plan available.</p>
+    {% endif %}
+  </div>
+{% else %}
+  <p>This product is only available for one-time purchase.</p>
+{% endif %}
+
   {{- product.title | link_to: product.url }}
 {% endfor %}
