@@ -28,8 +28,6 @@ spacific collection category
    <p>image:- {{ product.images }}</p>
 <p><img src="{{ product.images[0] | image_url }}"></p>
 <p><img src="{{ product.media[0] | image_url }}"></p>
-{%- for field in product.metafields.testing_metafield -%}
-      <li>{{ test_1.testing_metafield }}</li>
-    {%- endfor -%}
+<p>{{ product.custom.test_metafield_created }}</p>
   {{- product.title | link_to: product.url }}
 {% endfor %}
