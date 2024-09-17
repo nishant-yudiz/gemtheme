@@ -97,5 +97,24 @@ spacific collection category
 {% else %}
   <p>No tags available for this product.</p>
 {% endif %}
+  {% if product.type %}
+  <p>Product Type: {{ product.type }}</p>
+{% else %}
+  <p>No product type available.</p>
+{% endif %}
+  <a href="{{ product.url }}">
+  View {{ product.title }}
+</a>
+  {% if product.variants.size > 1 %}
+  <h4>Available Variants:</h4>
+  <ul>
+    {% for variant in product.variants %}
+      <li>{{ variant.title }} - {{ variant.price | money }}</li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No variants available.</p>
+{% endif %}
+
   {{- product.title | link_to: product.url }}
 {% endfor %}
