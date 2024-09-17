@@ -39,5 +39,8 @@ spacific collection category
   </ul>
 {% endfor %} 
 <p>price:- {{ product.price }}</p>
+  <p>price_min {{ product.price_min }}</p>
+    <p>price_max {{ product.price_max }}</p>
+
   {{- product.title | link_to: product.url }}
 {% endfor %}
