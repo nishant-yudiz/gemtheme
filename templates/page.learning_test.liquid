@@ -115,6 +115,6 @@ spacific collection category
 {% else %}
   <p>No variants available.</p>
 {% endif %}
-
+<p>{{ product.vendor }}</p>
   {{- product.title | link_to: product.url }}
 {% endfor %}
