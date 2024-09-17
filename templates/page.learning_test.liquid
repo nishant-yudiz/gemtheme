@@ -39,8 +39,8 @@ spacific collection category
   </ul>
 {% endfor %} 
 <p>price:- {{ product.price | money}}</p>
-  <p>price_min {{ product.price_min }}</p>
-    <p>price_max {{ product.price_max }}</p>
+  <p>price_min {{ product.price_min | money_with_currency }}</p>
+    <p>price_max {{ product.price_max | money_with_currency }}</p>
 <p>price_varies:- {{ product.price_varies }}</p>
  <p>published_at:- {{ product.published_at }}</p>
  <p>quantity_price_breaks_configured:- {{ product.quantity_price_breaks_configured }}</p>
