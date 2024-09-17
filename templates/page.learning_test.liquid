@@ -19,6 +19,6 @@ spacific collection category
   <p>{{ product.content }}</p>
   <p>{{ product.created_at }}</p>
   <p>{{ product.description }}</p>
-  <p><img src="{{ product.featured_image | asset_img_url  }}"></p>
+  <p><img src="{{ product.featured_media | asset_img_url  }}"></p>
   {{- product.title | link_to: product.url }}
 {% endfor %}
