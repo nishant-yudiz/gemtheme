@@ -29,7 +29,14 @@ spacific collection category
 <p><img src="{{ product.images[0] | image_url }}"></p>
 <p><img src="{{ product.media[0] | image_url }}"></p>
   <p>Metafield: {{ product.metafields.custom.test_metafield_created }}</p>
-<p>{{ product.options }}</p>  
+<p>{{ product.options }}</p> 
+{% for option in product.options_with_values %}
+  <h3>{{ option.name }}</h3>
+  <ul>
+    {% for value in option.values %}
+      <li>{{ value }}</li>
+    {% endfor %}
+  </ul>
+{% endfor %} 
   {{- product.title | link_to: product.url }}
 {% endfor %}
-<p>metafield:- {{ product.custom.test_metafield_created}}</p>
