@@ -38,7 +38,7 @@ spacific collection category
     {% endfor %}
   </ul>
 {% endfor %} 
-<p>price:- {{ product.price }}</p>
+<p>price:- {{ product.price | money}}</p>
   <p>price_min {{ product.price_min }}</p>
     <p>price_max {{ product.price_max }}</p>
 <p>price_varies:- {{ product.price_varies }}</p>
