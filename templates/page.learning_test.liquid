@@ -9,5 +9,6 @@ Tracking Number: {{ fulfillment.tracking_number }}
 spacific collection category
 <h2>{{ collections['sport-watches'] .title }}</h2>
 {% for product in collections['sport-watches'].products %}
+  <h3>{{ product.title }}</h3>
   {{- product.title | link_to: product.url }}
 {% endfor %}
