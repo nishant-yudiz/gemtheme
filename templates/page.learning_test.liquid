@@ -183,7 +183,7 @@ article blog post get <br>
 {% assign news = blogs['book'] %}
 {% if news.articles.size > 0 %}
     {% for test in news.articles %}
-        {{ test.title }}
+       post title:-  {{ test.title }}<br>
       {% endfor %}
 {% endif %}
 <h1>{{ page.title }}</h1>
