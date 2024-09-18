@@ -120,3 +120,10 @@ spacific collection category
 {% endfor %}
 asxasx
 fvf
+
+{% form 'contact' %}
+  <input type="text" name="contact[name]" placeholder="Name">
+  <input type="email" name="contact[email]" placeholder="Email">
+  <textarea name="contact[body]" placeholder="Message"></textarea>
+  <input type="submit" value="Send">
+{% endform %}
