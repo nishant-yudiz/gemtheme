@@ -135,4 +135,7 @@ artical blog post get <br>
   {% if article.image %}
     <img src="{{ article.image | image_url: 'large' }}" alt="{{ article.title }}">
 {% endif %}
+  <div class="article-content">
+    {{ article.content }}
+  </div>
 </article>
