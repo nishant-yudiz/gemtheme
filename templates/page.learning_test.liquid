@@ -180,3 +180,34 @@ article blog post get <br>
     </div>
   {% endif %}
 </article>
+
+<h1>{{ page.title }}</h1>
+
+{% assign news_blog = blogs['news'] %}
+
+{% if news_blog.articles.size > 0 %}
+  {% paginate news_blog.articles by 10 %}
+    {% for article in news_blog.articles %}
+      <article>
+        <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
+        <p>Published on {{ article.published_at | date: '%B %d, %Y' }}</p>
+        
+        {% if article.image %}
+          <img src="{{ article.image | img_url: 'medium' }}" alt="{{ article.title }}">
+        {% endif %}
+        
+        <div class="article-excerpt">
+          {{ article.excerpt }}
+        </div>
+        
+        <p><a href="{{ article.url }}">Read more</a></p>
+      </article>
+    {% endfor %}
+    
+    {% if paginate.pages > 1 %}
+      {{ paginate | default_pagination }}
+    {% endif %}
+  {% endpaginate %}
+{% else %}
+  <p>No news articles found.</p>
+{% endif %}
