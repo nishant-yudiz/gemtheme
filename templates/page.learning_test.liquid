@@ -186,7 +186,7 @@ article blog post get <br>
 {% assign news_blog = blogs['news'] %}
 
 {% if news_blog.articles.size > 0 %}
-  {% paginate news_blog.articles by 10 %}
+  {% paginate news_blog.articles by 2 %}
     {% for article in news_blog.articles %}
       <article>
         <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
