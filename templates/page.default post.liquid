@@ -1,7 +1,11 @@
 hello
 
-{% for article in blog.articles %}
-  <h2>{{ article.title }}</h2>
+{% for blog in blogs %}
+  {% for article in blog.articles %}
+    <h2>{{ article.title }}</h2>
+    <p>{{ article.excerpt }}</p>
+    <a href="{{ article.url }}">Read more</a>
+  {% endfor %}
 {% endfor %}
 
 {% for tag in blog.all_tags %}
