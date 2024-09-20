@@ -9,7 +9,9 @@ Product collection
 {% assign collection = collections['sport-watches'] %}
 <ul>
 {% for product in collection.products %}
-  <a href="{{ product.url }}"><li>{{ product.title }}</li></a>
-  <li>{{ product.price | money }}</li>
+  <li>
+      <a href="{{ product.url }}">{{ product.title }}</a>
+      {{ product.price | money }}
+  </li>
 {% endfor %}
 </ul>
