@@ -1465,5 +1465,27 @@
         "default": "scheme-1"
       }
     ]
-  }
+  },
+  {
+    "name" : "Colors",
+    "settings": [
+      {
+        "type" : "header",
+        "content" : "header colors"
+
+      },
+      {
+         "type" : "color",
+          "id" : "link color",
+          "label": "Link Color",
+          "default" : "#ff00ff"
+      },
+      {
+        "type" : "color",
+        "id" : "btn_colors",
+        "label" : "Button header color",
+        "default" : "#00ff00"
+      }
+    ]    
+}
 ]
