@@ -3,5 +3,13 @@
 {{ "          So much room for activities          " | lstrip | newline_to_br}}!
 {{ "Liquid" | slice: -3, 2 | newline_to_br}}
 {{ "Lkquid" | slice: -3, 2 }}
-
+<br/>
 Product collection
+
+{% assign collection = collections['sport-watch'] %}
+<ul>
+{% for product in collection.products %}
+  <li>{{ product.title }}</li>
+  <li>{{ product.price | money }}</li>
+{% endfor %}
+</ul>
