@@ -10,7 +10,7 @@ Product collection
 <ul>
 {% for product in collection.products %}
   <li>
-      <a href="{{ product.url }}">{{ product.title }}</a>
+      <a href="{{product.url}}">{{product.title}}</a>
        {{ product.price | money }}
   </li>
 {% endfor %}
